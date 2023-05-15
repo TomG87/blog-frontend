@@ -4,6 +4,7 @@ import { PostsNew } from "./PostsNew";
 import { PostsIndex } from "./PostsIndex";
 import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
+<div className="container"></div>
 
 export function Content() {
   const [posts, setPosts] = useState([]);
