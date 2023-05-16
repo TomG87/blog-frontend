@@ -4,6 +4,7 @@ import { PostsNew } from "./PostsNew";
 import { PostsIndex } from "./PostsIndex";
 import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
+import { Signup } from "./Signup";
 <div className="container"></div>
 
 export function Content() {
@@ -35,6 +36,7 @@ export function Content() {
 
   return (
     <div>
+      <Signup />
       <PostsNew />
       <br />
       <br />

@@ -1,7 +1,13 @@
-#posts-index img {
+.posts-index-img {
   width: 300px;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+#root {
+  font-family: Optima;
+
+  background-image: url('./assets/interlaced.png');
 }
