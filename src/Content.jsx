@@ -5,6 +5,8 @@ import { PostsIndex } from "./PostsIndex";
 import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
 import { Signup } from "./Signup";
+import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
 <div className="container"></div>
 
 export function Content() {
@@ -36,6 +38,8 @@ export function Content() {
 
   return (
     <div>
+      <Login />
+      <LogoutLink />
       <Signup />
       <PostsNew />
       <br />
