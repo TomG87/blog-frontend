@@ -15,7 +15,6 @@ export function PostsIndex(props) {
             </div>
        </div>
       ))};
-
     </div>
   );
 }
