@@ -15,7 +15,7 @@ export function Content() {
   const [currentPost, setCurrentPost] = useState({});
 
   const handleIndexPosts = () => {
-    console.log('in handle index recipes');
+    console.log('in handle index posts');
 
     axios.get('http://localhost:3000/posts.json').then(response => {
       console.log(response.data);
@@ -43,6 +43,33 @@ export function Content() {
     console.log('handling create post')
 }
 
+const handleUpdatePost = (postId, params) => {
+  console.log('handling update post...');
+  axios.patch(`http://localhost:3000/posts/${postId}.json`, params).then(response => {
+    console.log(response.data);
+    setPosts(
+      posts.map(post => {
+        if (post.id === response.data.id) {
+          return response.data;
+        } else {
+          return post;
+        }
+      })
+    )
+    setIsPostShowVisible(false);
+
+  })
+}
+
+const handleDestroyPost = (postId) => {
+  console.log('handling destroy post')
+  axios.delete(`http://localhost:3000/posts/${postId}.json`).then(response => {
+    console.log(response.data);
+    // post.select {|post| post.id != post_id}
+    setPosts(post.filter(post => post.id != postId))
+  })
+}
+
   return (
     <div>
       <Login />
@@ -55,7 +82,7 @@ export function Content() {
       <button onClick={handleIndexPosts}>Get data</button>
       <PostsIndex posts={posts} onShowPost={handleShowPost}/>
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-       <PostsShow currentPost={currentPost}/>
+       <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} onDestroyPost={handleDestroyPost} />
       </Modal>
     </div>
   );
