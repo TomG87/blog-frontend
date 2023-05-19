@@ -17,7 +17,7 @@ export function PostsShow(props) {
     props.onDestroyPost(props.post.id)
     // after response comes back, update the frontend with whatever rails did
   }
-  console.log(props.recipe)
+  console.log(props.post)
   console.log(props.post)
   return (
     <div>
@@ -34,7 +34,7 @@ export function PostsShow(props) {
 
       <br />
       <br />
-      <button onClick={handleClick}>Delete recipe</button>
+      <button onClick={handleClick}>Delete post</button>
     </div>
   )
 }
