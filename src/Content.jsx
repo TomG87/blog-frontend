@@ -7,7 +7,11 @@ import { Modal } from "./Modal";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
+import { Routes, Route } from "react-router-dom";
+import { About } from "./About";
+
 <div className="container"></div>
+
 
 export function Content() {
   const [posts, setPosts] = useState([]);
@@ -84,6 +88,9 @@ const handleDestroyPost = (postId) => {
       <Modal show={isPostsShowVisible} onClose={handleClose}>
        <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} onDestroyPost={handleDestroyPost} />
       </Modal>
+      <Routes>
+      <Route path="/about" element={<About />} />
+    </Routes>
     </div>
   );
 }
